@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sweet Seventeen 🌸</title>
+<meta name="theme-color" content="#f3e3f6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500&family=Shippori+Mincho:wght@500;700&family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LATAR: awan, ranting sakura, kelopak jatuh -->
+<div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+<div class="sun"></div>
+<svg class="fuji" viewBox="0 0 800 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9a2e6"/><stop offset="1" stop-color="#f0d4ea"/></linearGradient>
+    <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7b9d3"/><stop offset="1" stop-color="#fbe3ea"/></linearGradient>
+  </defs>
+  <path d="M-20 220 L-20 150 C60 120 120 140 190 160 C260 175 300 150 360 120 C420 100 480 130 560 150 C650 170 720 120 820 140 L820 220Z" fill="url(#hg)" opacity=".7"/>
+  <path d="M120 220 L318 70 Q400 38 482 70 L690 220Z" fill="url(#fg)"/>
+  <path d="M318 70 Q400 38 482 70 L462 86 L438 74 L414 92 L392 74 L366 90 L342 78Z" fill="#fff" opacity=".92"/>
+  <path d="M-20 220 L-20 190 C80 170 160 200 260 196 C380 190 440 176 540 194 C640 210 720 180 820 196 L820 220Z" fill="#f6cfe1" opacity=".8"/>
+  <g fill="#c8344a"><rect x="598" y="178" width="3.6" height="30"/><rect x="630" y="178" width="3.6" height="30"/><path d="M590 177 Q616 170 642 177 L642 182 Q616 176 590 182Z"/><rect x="596" y="188" width="40" height="3"/></g>
+</svg>
+<svg class="waves" aria-hidden="true"><defs>
+  <pattern id="sg" width="40" height="20" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="#c9a1e6" stroke-width="1.1">
+      <circle cx="20" cy="20" r="18"/><circle cx="20" cy="20" r="12"/><circle cx="20" cy="20" r="6"/>
+      <circle cx="0" cy="10" r="18"/><circle cx="0" cy="10" r="12"/><circle cx="0" cy="10" r="6"/>
+      <circle cx="40" cy="10" r="18"/><circle cx="40" cy="10" r="12"/><circle cx="40" cy="10" r="6"/>
+    </g>
+  </pattern></defs><rect width="100%" height="100%" fill="url(#sg)"/></svg>
+<div class="vtext" id="vtext"></div>
+<canvas id="bg"></canvas>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="lg" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#ffb3b8"/><stop offset=".6" stop-color="#e0455f"/><stop offset="1" stop-color="#b3233f"/></radialGradient>
+    <radialGradient id="lglow"><stop offset="0" stop-color="#ffc9a0" stop-opacity=".7"/><stop offset="1" stop-color="#ffc9a0" stop-opacity="0"/></radialGradient>
+    <g id="lan">
+      <circle cx="0" cy="22" r="30" fill="url(#lglow)"/>
+      <line x1="0" y1="0" x2="0" y2="16" stroke="#8d6a6e" stroke-width="1.5"/>
+      <rect x="-8" y="14" width="16" height="5" rx="1.5" fill="#d4a84f"/>
+      <ellipse cx="0" cy="34" rx="15" ry="19" fill="url(#lg)"/>
+      <path d="M-14 28H14M-15 34H15M-14 40H14" stroke="#9c1c36" stroke-width=".9" opacity=".7"/>
+      <ellipse cx="0" cy="34" rx="15" ry="19" fill="none" stroke="#f6dc92" stroke-width=".8" opacity=".8"/>
+      <rect x="-8" y="50" width="16" height="4" rx="1.5" fill="#d4a84f"/>
+      <line x1="0" y1="54" x2="0" y2="64" stroke="#d4a84f" stroke-width="1.5"/><circle cx="0" cy="66" r="2" fill="#d4a84f"/>
+    </g>
+    <radialGradient id="pg" cx=".5" cy="1" r="1.05"><stop offset="0" stop-color="#ee6a97"/><stop offset=".42" stop-color="#ffbcd4"/><stop offset="1" stop-color="#fff4f8"/></radialGradient>
+    <path id="pt" d="M0 0 C-6.5 -3 -9 -9.6 -4.7 -12.5 C-3.3 -13.3 -1.4 -12.7 0 -10.8 C1.4 -12.7 3.3 -13.3 4.7 -12.5 C9 -9.6 6.5 -3 0 0Z" fill="url(#pg)" stroke="#f2a0be" stroke-width=".35"/>
+    <g id="fl">
+      <use href="#pt"/><use href="#pt" transform="rotate(72)"/><use href="#pt" transform="rotate(144)"/><use href="#pt" transform="rotate(216)"/><use href="#pt" transform="rotate(288)"/>
+      <g stroke="#e0638f" stroke-width=".35" fill="none"><path d="M0 0L0.72 -5.15"/><circle cx="0.72" cy="-5.15" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L3.91 -4.55"/><circle cx="3.91" cy="-4.55" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L6.52 -1.94"/><circle cx="6.52" cy="-1.94" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L5.00 1.44"/><circle cx="5.00" cy="1.44" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L3.95 4.51"/><circle cx="3.95" cy="4.51" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L1.01 6.73"/><circle cx="1.01" cy="6.73" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L-2.13 4.74"/><circle cx="-2.13" cy="4.74" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L-5.03 3.28"/><circle cx="-5.03" cy="3.28" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L-6.80 0.05"/><circle cx="-6.80" cy="0.05" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L-4.40 -2.78"/><circle cx="-4.40" cy="-2.78" r=".65" fill="#f3c453" stroke="none"/><path d="M0 0L-2.54 -5.44"/><circle cx="-2.54" cy="-5.44" r=".65" fill="#f3c453" stroke="none"/></g>
+      <circle r="1.5" fill="#d8e08c" stroke="#b9c46a" stroke-width=".3"/>
+    </g>
+    <g id="fl2"><use href="#fl" transform="scale(.7 1)"/></g>
+    <g id="bud"><ellipse cx="0" cy="-4" rx="2.7" ry="4.3" fill="#f58cb2"/><ellipse cx="-.7" cy="-5" rx="1.1" ry="2.2" fill="#ffd0e0" opacity=".85"/><path d="M-2.4 0Q0 -3 2.4 0Z" fill="#8f5559"/></g>
+    <g id="lf"><path d="M0 0C3 -3.2 7.5 -3.2 11.5 0C7.5 3.2 3 3.2 0 0Z" fill="#9db06f" stroke="#7a9157" stroke-width=".3"/><path d="M0 0H10" stroke="#6f8450" stroke-width=".3"/></g>
+    <g id="brg">
+      <!-- batang: bertahap mengecil -->
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M-12 16C50 30 100 22 150 52" stroke="#4a2f33" stroke-width="11"/>
+        <path d="M150 52C190 76 225 92 262 140" stroke="#4a2f33" stroke-width="7"/>
+        <path d="M262 140C274 156 281 170 285 184" stroke="#4a2f33" stroke-width="4.5"/>
+        <path d="M-12 14C50 27 100 20 150 49" stroke="#8a6366" stroke-width="3.2" opacity=".55"/>
+        <path d="M150 50C190 73 225 89 262 137" stroke="#8a6366" stroke-width="2" opacity=".5"/>
+        <path d="M-12 17C50 31 100 23 150 53" stroke="#2c1a1d" stroke-width="1.3" stroke-dasharray="1 6" opacity=".5"/>
+        <path d="M150 53C190 77 225 93 262 141" stroke="#2c1a1d" stroke-width="1" stroke-dasharray="1 5" opacity=".5"/>
+        <!-- ranting -->
+        <g stroke="#5a3a3e">
+          <path d="M60 26C70 50 66 70 78 92" stroke-width="3.2"/>
+          <path d="M112 34C124 60 150 80 182 98" stroke-width="3"/>
+          <path d="M150 52C165 40 185 36 205 40" stroke-width="2.6"/>
+          <path d="M198 86C214 104 232 108 252 112" stroke-width="2.4"/>
+          
+          <path d="M30 22C26 8 34 -2 44 -6" stroke-width="2.4"/>
+        </g>
+      </g>
+      <!-- daun muda -->
+      <use href="#lf" transform="translate(118 54) rotate(40)"/><use href="#lf" transform="translate(172 40) rotate(-30)"/>
+      <use href="#lf" transform="translate(236 112) rotate(60)"/><use href="#lf" transform="translate(70 62) rotate(110)"/>
+      <use href="#lf" transform="translate(258 148) rotate(70) scale(.8)"/>
+      <!-- bunga -->
+      <use href="#fl" transform="translate(28 22) rotate(10) scale(1.15)"/>
+      <use href="#fl" transform="translate(92 30) rotate(40) scale(1.3)"/>
+      <use href="#fl" transform="translate(140 46) rotate(75) scale(1.25)"/>
+      <use href="#fl" transform="translate(78 92) rotate(20) scale(1.2)"/>
+      <use href="#fl" transform="translate(182 98) rotate(55) scale(1.3)"/>
+      <use href="#fl" transform="translate(205 40) rotate(100) scale(1.2)"/>
+      <use href="#fl" transform="translate(252 112) rotate(15) scale(1.25)"/>
+      <use href="#fl" transform="translate(284 182) rotate(35) scale(.9)"/>
+      <use href="#fl" transform="translate(44 -6) rotate(60) scale(1.1)"/>
+      <use href="#fl" transform="translate(118 62) rotate(120) scale(.95)"/>
+      <use href="#fl" transform="translate(192 62) rotate(80) scale(1)"/>
+      <use href="#fl" transform="translate(266 150) rotate(150) scale(1)"/>
+      <use href="#fl2" transform="translate(60 52) rotate(-20) scale(.95)"/>
+      <use href="#fl2" transform="translate(162 24) rotate(30) scale(.9)"/>
+      <use href="#fl2" transform="translate(228 138) rotate(-40) scale(.9)"/>
+      <use href="#bud" transform="translate(12 10) rotate(-30)"/><use href="#bud" transform="translate(108 14) rotate(20)"/>
+      <use href="#bud" transform="translate(224 70) rotate(40)"/><use href="#bud" transform="translate(280 128) rotate(-10)"/>
+      <use href="#bud" transform="translate(100 74) rotate(150)"/>
+      <!-- lentera -->
+      <use href="#lan" transform="translate(104 27) scale(.62)"/><use href="#lan" transform="translate(229 104) scale(.5)"/>
+    </g>
+  </defs>
+</svg>
+<svg class="branch left" viewBox="0 0 310 270" aria-hidden="true"><use href="#brg"/></svg>
+<svg class="branch right" viewBox="0 0 310 270" aria-hidden="true"><use href="#brg"/></svg>
+
+<div class="frame"></div>
+<div class="dim" id="dim"></div><div class="warm" id="warm"></div>
+<canvas id="confetti"></canvas>
+<button id="musicBtn" class="music hidden" aria-label="Musik">♪</button>
+<div id="dots" class="dots hidden"></div>
+<button id="devNext" class="devnext hidden">⏭ lewati halaman (preview)</button>
+
+<!-- 1. COUNTDOWN -->
+<section class="stage active" id="s-gate">
+  <p class="eyebrow">✦ a special day is coming ✦</p>
+  <h1 class="script" id="gateTitle">Sweet Seventeen</h1>
+  <p class="jp-big">十七歳の誕生日</p>
+  <p class="jp">もうすぐ、特別な日<small>Sebentar lagi, hari yang istimewa</small></p>
+  <p class="sub" id="gateSub"></p>
+  <p class="date-chip" id="gateDate"></p>
+  <div class="count" id="count">
+    <div><b id="cd">00</b><span><i>日</i>Hari</span></div>
+    <div><b id="ch">00</b><span><i>時</i>Jam</span></div>
+    <div><b id="cm">00</b><span><i>分</i>Menit</span></div>
+    <div><b id="cs">00</b><span><i>秒</i>Detik</span></div>
+  </div>
+  <p class="hint" id="gateHint">Sabar ya, kejutannya terbuka tepat di hari ulang tahunmu 🎀</p>
+  <button class="btn hidden" id="openGate">Buka Kejutan ✨</button>
+</section>
+
+<!-- 2. AMPLOP -->
+<section class="stage" id="s-envelope">
+  <p class="eyebrow">✦ sebuah surat untukmu ✦</p>
+  <p class="jp">あなたへの手紙<small>Surat untukmu</small></p>
+  <div class="envelope" id="envelope" tabindex="0" role="button" aria-label="Buka amplop">
+    <div class="env-back"></div>
+    <div class="env-letter"><span class="script" id="envTo">For You</span></div>
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+    <div class="seal">祝</div>
+  </div>
+  <p class="hint">Ketuk amplopnya untuk membuka</p>
+</section>
+
+<!-- 3. SURAT -->
+<section class="stage" id="s-letter">
+  <h2 class="script big" id="letterTitle">Happy Birthday</h2>
+  <p class="jp">お誕生日おめでとう<small>Selamat ulang tahun</small></p>
+  <article class="paper">
+    <div class="paper-text" id="letterText"></div><span class="cursor"></span>
+  </article>
+  <div class="row">
+    <button class="btn ghost" id="skipType">Lewati</button>
+    <button class="btn hidden" id="letterNext">Lanjut 📖</button>
+  </div>
+</section>
+
+<!-- 4. DIARY RAHASIA -->
+<section class="stage" id="s-diary">
+  <p class="eyebrow">✦ rahasia kecil ✦</p>
+  <h2 class="script big">My Secret Diary</h2>
+  <p class="jp">ひみつの日記<small>Diary rahasia</small></p>
+  <div class="book" id="book" tabindex="0" role="button" aria-label="Buka diary">
+    <div class="book-inside"><div class="dpage" id="dpage"></div></div>
+    <div class="cover"><span class="script" id="coverText">Dear Kall</span><i class="lock">🔒</i></div>
+  </div>
+  <div class="dnav hidden" id="dnav">
+    <button class="btn ghost" id="dPrev" aria-label="Sebelumnya">‹</button>
+    <span id="dCount">1/5</span>
+    <button class="btn ghost" id="dNext" aria-label="Berikutnya">›</button>
+  </div>
+  <p class="hint" id="diaryHint">Ketuk buku untuk membuka kuncinya</p>
+  <button class="btn hidden" id="diaryDone">Lanjut 💜</button>
+</section>
+
+<!-- 5. 17 ALASAN -->
+<section class="stage" id="s-reasons">
+  <h2 class="script big">17 Alasan</h2>
+  <p class="jp">十七の理由<small>Tujuh belas alasan</small></p>
+  <p class="sub">Ada 17 alasan kenapa kamu spesial. Ketuk satu per satu 💗</p>
+  <div class="hearts" id="hearts"></div>
+  <p class="hint"><span id="rCount">0</span>/17 terbuka</p>
+  <div class="row">
+    <button class="btn ghost" id="reasonSkip">Lewati</button>
+    <button class="btn hidden" id="reasonNext">Lanjut 📸</button>
+  </div>
+  <div class="reason-pop hidden" id="reasonPop"><div class="rcard"><small id="rNum"></small><p id="rText"></p><span>ketuk untuk menutup</span></div></div>
+</section>
+
+<!-- 6. LAGU -->
+<section class="stage" id="s-music">
+  <p class="eyebrow">✦ lagu kesukaanmu ✦</p>
+  <h2 class="script big">Our Song</h2>
+  <p class="jp" id="songJP"><small id="songSub"></small></p>
+  <div class="vinyl-wrap"><div class="vinyl" id="vinyl"><i>🌸</i></div><span class="note n1">♪</span><span class="note n2">♫</span><span class="note n3">♪</span></div>
+  <div class="player">
+    <button class="btn ghost" id="mPlay" aria-label="Putar atau jeda">▶</button>
+    <input type="range" id="mBar" min="0" max="100" value="0" step="0.1" aria-label="Posisi lagu">
+    <span id="mTime">0:00 / 0:00</span>
+  </div>
+  <p class="sub">Lagu yang kamu suka, semoga bikin harimu makin spesial 🎧</p>
+  <button class="btn" id="musicNext">Lanjut 📸</button>
+</section>
+
+<!-- 6. GALERI -->
+<section class="stage" id="s-gallery">
+  <h2 class="script big">Our Memories</h2>
+  <p class="jp">思い出<small>Kenangan</small></p>
+  <p class="sub">Ketuk foto untuk memperbesar</p>
+  <div class="polaroids" id="polaroids"></div>
+  <button class="btn" id="galleryNext">Lanjut 💫</button>
+</section>
+
+<!-- 7. VIDEO (otomatis dilewati kalau tidak ada video) -->
+<section class="stage" id="s-video">
+  <h2 class="script big">A Moment For You</h2>
+  <p class="jp">ひとときを君に<small>Sebuah momen untukmu</small></p>
+  <div class="vframe"><video id="momentVideo" controls playsinline preload="metadata"></video></div>
+  <button class="btn" id="videoNext">Lanjut 🌸</button>
+</section>
+
+<!-- 8. DAZAI -->
+<section class="stage" id="s-dazai">
+  <p class="eyebrow">✦ karakter favoritmu ✦</p>
+  <h2 class="script big" id="dzTitle">Favorit Kamu</h2>
+  <p class="jp">お気に入り<small>Favoritmu</small></p>
+  <div class="dz-frame"><div class="dz-img" id="dzImg"></div><span class="dz-tag" id="dzTag"></span></div>
+  <h3 class="dz-name" id="dzName"></h3>
+  <p class="sub" id="dzNote"></p>
+  <button class="btn" id="dzNext">Lanjut 🎂</button>
+</section>
+
+<!-- 9. KUE -->
+<section class="stage" id="s-cake">
+  <h2 class="script big">Make a Wish…</h2>
+  <p class="jp">願いごと<small>Buatlah permohonan</small></p>
+  <p class="sub" id="cakeSub">Pejamkan mata, buat harapan, lalu tiup lilinnya 🕯️</p>
+  <div class="cake" id="cake">
+    <div class="candles">
+      <div class="candle"><i class="flame"></i><b>1</b></div>
+      <div class="candle"><i class="flame"></i><b>7</b></div>
+    </div>
+    <div class="tier t3"></div><div class="tier t2"></div><div class="tier t1"></div><div class="plate"></div>
+  </div>
+  <div class="row" id="blowRow">
+    <button class="btn" id="blow">Tiup Lilin 💨</button>
+    <button class="btn ghost" id="blowMic">🎤 Tiup lewat mikrofon</button>
+  </div>
+  <p class="hint hidden" id="micHint">Tiup ke arah mikrofon HP / laptop-mu…</p>
+  <button class="btn hidden" id="cakeNext">Lanjut 🌟</button>
+</section>
+
+<!-- 10. FLOATING WISHES -->
+<section class="stage" id="s-wishes">
+  <h2 class="script big">Floating Wishes</h2>
+  <p class="jp">祈り<small>Doa-doa untukmu</small></p>
+  <p class="sub">Ketuk gelembung doa yang melayang 🫧</p>
+  <div class="sky" id="sky"></div>
+  <p class="hint"><span id="wCount">0</span> doa terbaca</p>
+  <div class="row">
+    <button class="btn ghost" id="wishSkip">Lewati</button>
+    <button class="btn hidden" id="wishNext">Lanjut 🎁</button>
+  </div>
+  <div class="reason-pop hidden" id="wishPop"><div class="rcard"><small>doa untukmu</small><p id="wText"></p><span>ketuk untuk menutup</span></div></div>
+</section>
+
+<!-- 11. KADO -->
+<section class="stage" id="s-gift">
+  <p class="eyebrow">✦ satu hal lagi ✦</p>
+  <h2 class="script big">Satu Hal Lagi…</h2>
+  <p class="jp">もうひとつの贈りもの<small>Satu hadiah lagi</small></p>
+  <div class="gift" id="gift" tabindex="0" role="button" aria-label="Buka kado">
+    <div class="g-lid"><i></i></div><div class="g-box"><i></i></div><div class="g-glow"></div>
+  </div>
+  <p class="hint">Ketuk kadonya</p>
+</section>
+
+<!-- 12. PENUTUP -->
+<section class="stage" id="s-final">
+  <p class="eyebrow">✦ with all my love ✦</p>
+  <h1 class="script huge" id="finalTitle">Happy Sweet Seventeen</h1>
+  <p class="jp-big">十七歳、おめでとう！</p>
+  <p class="final-name" id="finalName"></p>
+  <div class="card">
+    <div class="hanko">祝</div>
+    <p id="finalMsg"></p>
+    <p class="jp-line" id="finalJP"></p>
+    <p class="sign" id="sign"></p>
+  </div>
+  <div class="row">
+    <a class="btn hidden" id="waBtn" target="_blank" rel="noopener">Balas ucapan 💬</a>
+    <button class="btn ghost" id="replay">Ulangi dari awal ↺</button>
+  </div>
+</section>
+
+<div class="lightbox hidden" id="lightbox"><figure><div id="lbImg"></div><figcaption id="lbCap"></figcaption></figure></div>
+<audio id="audio" loop preload="auto"></audio>
+
+<!-- urutan script jangan diubah -->
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
